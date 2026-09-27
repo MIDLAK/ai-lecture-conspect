@@ -1,0 +1,8 @@
+faster-whisper
+openai
+anthropic
+gigachat
+python-dotenv
+
+nvidia-cublas-cu12
+nvidia-cudnn-cu12==9.*

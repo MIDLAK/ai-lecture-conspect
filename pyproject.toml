@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lecture-summarizer"
+version = "0.1.0"
+description = "Суммаризация лекций по аудио-записи в markdown"
+requires-python = ">=3.11"
+
+dependencies = [
+    "faster-whisper",
+    "openai",
+    "anthropic",
+    "gigachat",
+    "python-dotenv",
+    "nvidia-cublas-cu12",
+    "nvidia-cudnn-cu12>=9,<10",
+]
+
+[project.scripts]
+ai-lecture-conspect = "lecture_summarizer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+    "ANN",
+]
